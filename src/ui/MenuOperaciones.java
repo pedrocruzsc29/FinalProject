@@ -13,7 +13,7 @@ public class MenuOperaciones {
     public void mostrar() {
         int opcion;
         do {
-            validaciones.clearScreen();
+
             System.out.println("=== OPERACIONES ===");
             System.out.println("1. Registrar préstamo");
             System.out.println("2. Registrar devolución");
