@@ -16,7 +16,7 @@ public class MenuLibros {
         int opcion;
         do {
             System.out.println("pepe");
-
+            validaciones.clearScreen();
             System.out.println("=== GESTION DE LIBROS ===");
             System.out.println("1. Registrar nuevo libro");
             System.out.println("2. Buscar libro por codigo");
