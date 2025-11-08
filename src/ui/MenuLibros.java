@@ -15,7 +15,8 @@ public class MenuLibros {
     public void mostrar() {
         int opcion;
         do {
-            validaciones.clearScreen();
+            System.out.println("pepe");
+
             System.out.println("=== GESTION DE LIBROS ===");
             System.out.println("1. Registrar nuevo libro");
             System.out.println("2. Buscar libro por codigo");
