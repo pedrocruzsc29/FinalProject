@@ -30,7 +30,12 @@ public class MenuUsuarios {
             opcion = validaciones.readInt("Seleccione una opcion: ");
 
             switch (opcion) {
-                case 0 -> {}
+                case 1 -> bibliotecaService.registrarUsuario();
+                // case 2 -> bibliotecaService.buscarUsuario();
+                // case 3 -> bibliotecaService.listarUsuariosConMasLibros();
+                // case 4 -> bibliotecaService.mostrarUsuariosEnEspera();
+                // case 5 -> bibliotecaService.mostrarUsuariosRegistrados();
+
                 default -> System.out.println("Opcion invalida");
             }
             validaciones.pause();
