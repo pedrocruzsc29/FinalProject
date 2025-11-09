@@ -8,8 +8,7 @@ public class Usuario implements Comparable<Usuario> {
     private String telefono;
     private int librosPrestados; // Inicia en 0
 
-    public Usuario(int numeroUsuario, String dni, String nombre, String direccion, String telefono
-            ) {
+    public Usuario(int numeroUsuario, String dni, String nombre, String direccion, String telefono  ) {
         this.numeroUsuario = numeroUsuario;
         this.dni = dni;
         this.nombre = nombre;
@@ -74,8 +73,7 @@ public class Usuario implements Comparable<Usuario> {
 
     @Override
     public int compareTo(Usuario o) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
+        return this.nombre.compareToIgnoreCase(o.nombre);
     }
     
 }

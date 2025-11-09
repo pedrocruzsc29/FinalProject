@@ -24,9 +24,15 @@ public class MenuOperaciones {
             opcion = validaciones.readInt("Seleccione una opción: ");
 
             switch (opcion) {
-
-                case 0 -> {}
-                default -> System.out.println("Opción inválida");
+                case 1:
+                    System.out.println("*** REGISTRAR PRESTAMO ***");
+                    break;
+                case 2: 
+                    System.out.println("*** REGISTRAR DEVOLUCIÓN ***");
+                    break;        
+                
+                default:
+                    System.out.println("Opción inválida");
             }
             validaciones.pause();
         } while (opcion != 0);
