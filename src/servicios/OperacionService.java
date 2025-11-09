@@ -20,13 +20,13 @@ public class OperacionService {
     public static void prestarLibro(BinarySearchTree <Usuario> usuarios, BinarySearchTree <Libro> libros, Stack <Operaciones> acciones, Queue <String> pendientes){
         Scanner sc = new Scanner(System.in);
         String nombre = validaciones.validarTextoIngresado(sc, "Usuario a buscar: ");
-        Usuario usuario = new Usuario(0," ",nombre, " ", " ");
-        if (usuarios.buscar1(usuario) != null){
+        Usuario usuarioTemp = new Usuario(0," ",nombre, " ", " ");
+        Usuario usuarioEcontrado = usuarios.buscar1(usuarioTemp);
+        if (usuarioEcontrado != null){
             int code = validaciones.validarNumero(sc, "Código del libro: ");
-            Libro libro = new Libro(code, " ", " ", 0.0, true);
-            if (libros.buscar1(libro) != null){
-                Usuario usuarioEcontrado = usuarios.buscar1(usuario);
-                Libro libroEncontrado = libros.buscar1(libro);
+            Libro libroTemporal = new Libro(code, " ", " ", 0.0, true);
+            Libro libroEncontrado = libros.buscar1(libroTemporal);
+            if (libroEncontrado != null){
                 if (libroEncontrado.isDisponible()){
                     libroEncontrado.setDisponible(false);
                     usuarioEcontrado.setLibrosPrestados(usuarioEcontrado.getLibrosPrestados() + 1);
@@ -34,22 +34,19 @@ public class OperacionService {
                     acciones.push(operacion);
                 }else{
                     pendientes.add(usuarioEcontrado.getNombre());
+                    System.out.println("Libro no disponible. Usuario agregado a PENDIENTES...");
                 }
-
             }else{
                 System.out.println("Libro no encontrado...");
             }
         }else{
             System.out.println("Usuario no encontrado...");
-        }
-    }
+            
+        }   
+    }    
 
     // DEVOLUCIONES 
 
 
-
-    }
-
-    
     
 }
