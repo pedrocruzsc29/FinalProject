@@ -77,6 +77,19 @@ public class OperacionService {
             System.out.println("Usuario no encontrado...");
         }
     }
+
+    // REVERSIÓN DE OPERACIONES 
+    
+    public static void reversionOperaciones(BinarySearchTree <Usuario> usuarios, BinarySearchTree <Libro> libros, Stack <Operaciones> acciones, Queue <String> pendientes){
+        Operaciones operacionReciente = acciones.pop();
+        if (operacionReciente.getTipo().equals("Prestamo")){
+            operacionReciente.getLibro().setDisponible(false);
+
+        }
+
+    }
+
+
         
 
 
