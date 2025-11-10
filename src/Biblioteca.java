@@ -38,7 +38,7 @@ private static void efectoMatrixCarga() {
         
         System.out.print("  [");
         for (int i = 0; i < 30; i++) {
-            System.out.print("█");
+            System.out.print("|");
             Thread.sleep(50);
         }
         System.out.println("] 100%");
