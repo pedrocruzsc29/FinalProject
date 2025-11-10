@@ -8,26 +8,20 @@ import estructuras.Validaciones.validaciones;
 public class UsuarioService {  
     private Usuario[] arregloUsuarios;
     private BinarySearchTree<Usuario> arbolUsuarios;
-    private Queue<String> colaPendientes;
     private int cantidadUsuarios;
-    private BinarySearchTree<Libro> arbolLibros;
  
 
 
      public UsuarioService(int capacidadUsuarios) {
         arregloUsuarios = new Usuario[capacidadUsuarios];
         arbolUsuarios = new BinarySearchTree<>();
-        colaPendientes = new Queue<>();
         cantidadUsuarios = 0;
-        arbolLibros = new BinarySearchTree<>();
     }
 
     // Contructor para reutilizar almacenes centrales (árboles/colas) de BibliotecaService
     public UsuarioService(int capacidadUsuarios, BinarySearchTree<Usuario> arbolUsuarios, Queue<String> colaPendientes, BinarySearchTree<Libro> arbolLibros) {
         arregloUsuarios = new Usuario[capacidadUsuarios];// donde se almacenan los usuarios registrados de forma secuencial. 
         this.arbolUsuarios = (arbolUsuarios != null) ? arbolUsuarios : new BinarySearchTree<>();// si arbolUsuarios es null, se crea uno nuevo y si no se usa el que se pasa como parámetro
-        this.colaPendientes = (colaPendientes != null) ? colaPendientes : new Queue<>();// si colaPendientes es null se crea uno nuevo y si no se usa el que se pasa como parametro
-        this.arbolLibros = (arbolLibros != null) ? arbolLibros : new BinarySearchTree<>();// si arbolLibros es null se crea uno nuevo y si no se usa el que se pasa como parámetro
         this.cantidadUsuarios = 0;
     }
     // Método para registrar un nuevo usuario
