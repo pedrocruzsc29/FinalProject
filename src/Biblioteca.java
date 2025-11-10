@@ -33,12 +33,12 @@ public class Biblioteca {
 
 private static void efectoMatrixCarga() {
     try {
-        System.out.println("\n\033[0;32m  [INICIALIZANDO SISTEMAS...]");
+        System.out.println("  [INICIALIZANDO SISTEMAS...]");
         Thread.sleep(300);
         
         System.out.print("  [");
         for (int i = 0; i < 30; i++) {
-            System.out.print("█");
+            System.out.print("|");
             Thread.sleep(50);
         }
         System.out.println("] 100%");

@@ -89,7 +89,7 @@ public class UsuarioService {
     }
     // ----------------------------------------------------------------------------------------------------------
     public void buscarUsuario() {
-        System.out.println("\n=== BUSCAR USUARIO ===");
+        System.out.println("\n\033[0;32m=== BUSCAR USUARIO ===");
         int numeroUsuario = validaciones.readInt("Ingrese número de usuario: ");
         Usuario usuario = buscarPorNumero(numeroUsuario);
         if (usuario != null) {
