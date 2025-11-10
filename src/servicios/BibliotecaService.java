@@ -15,26 +15,39 @@ public class BibliotecaService {
     public final Stack<Operaciones> acciones;
     public final Queue<String> pendientes;
 
+    private final UsuarioService usuarioService; // reutilizar instancia
+
     public BibliotecaService() {
         this.usuarios = new BinarySearchTree<>();
         this.libros = new BinarySearchTree<>();
         this.acciones = new Stack<>();
         this.pendientes = new Queue<>();
+        this.usuarioService = new UsuarioService(100, this.usuarios, this.pendientes, this.libros); // inicializar con referencias centrales
 
     }
 
-    // para invocar la lógica de operación
-    public void registrarPrestamo() {
-        OperacionService.prestarLibro(this.usuarios, this.libros, this.acciones, this.pendientes);
-    }
-
+    //LOGICA DE USUARIO
     public void registrarUsuario(){
-        // capadicidad de 100
-        UsuarioService usuarioService = new UsuarioService(100);
         usuarioService.registrarUsuario();
     }
 
+    public void buscarUsuario(){
+        usuarioService.buscarUsuario();
+    }
     
+    public void listarUsuariosConMasLibros(){
+        usuarioService.listarUsuariosConMasLibros();
+    }
+
+    public void mostrarUsuariosRegistrados(){
+        usuarioService.mostrarUsuariosRegistrados();
+    }
+    // ----------------------------------------------------------------------------------------------------------
+
+    // LOGICA DE OPERACIONES
+    public void registrarPrestamo() {
+        OperacionService.prestarLibro(this.usuarios, this.libros, this.acciones, this.pendientes);
+    }
 
 
 }
