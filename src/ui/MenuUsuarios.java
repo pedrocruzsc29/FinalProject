@@ -19,7 +19,7 @@ public class MenuUsuarios {
     public void mostrar() {
         int opcion;
         do {
-            validaciones.clearScreen();
+            validaciones.limpiarPantalla(); 
             System.out.println("\n\033[0;32m=== GESTION DE USUARIOS ===");
             System.out.println("1. Registrar nuevo usuario");
             System.out.println("2. Buscar usuario");

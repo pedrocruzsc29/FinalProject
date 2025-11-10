@@ -22,8 +22,9 @@ public class UsuarioService {
     public UsuarioService(int capacidadUsuarios, BinarySearchTree<Usuario> arbolUsuarios, Queue<String> colaPendientes, BinarySearchTree<Libro> arbolLibros) {
         arregloUsuarios = new Usuario[capacidadUsuarios];// donde se almacenan los usuarios registrados de forma secuencial. 
         this.arbolUsuarios = (arbolUsuarios != null) ? arbolUsuarios : new BinarySearchTree<>();// si arbolUsuarios es null, se crea uno nuevo y si no se usa el que se pasa como parámetro
+        // this.colaPendientes = (colaPendientes != null) ? colaPendientes : new Queue<>();// si colaPendientes es null se crea uno nuevo y si no se usa el que se pasa como parametro
+        // this.arbolLibros = (arbolLibros != null) ? arbolLibros : new BinarySearchTree<>();// si arbolLibros es null se crea uno nuevo y si no se usa el que se pasa como parámetro
         this.cantidadUsuarios = 0;
-        
     }
     // Método para registrar un nuevo usuario
     public void registrarUsuario() {

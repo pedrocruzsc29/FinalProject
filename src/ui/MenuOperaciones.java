@@ -15,7 +15,7 @@ public class MenuOperaciones {
         int opcion;
         do {
 
-            validaciones.clearScreen();
+            validaciones.limpiarPantalla();
             System.out.println("=== OPERACIONES ===");
             System.out.println("1. Registrar préstamo");
             System.out.println("2. Registrar devolución");

@@ -15,7 +15,7 @@ public class MenuPrincipal {
     public void mostrar() {
         int opcion;
         do {
-            validaciones.clearScreen();
+            validaciones.limpiarPantalla();
             System.out.println("=== BIBLIOTECA SYSTEM ===");
             System.out.println("1. Gestion de Libros");
             System.out.println("2. Gestion de Usuarios");
