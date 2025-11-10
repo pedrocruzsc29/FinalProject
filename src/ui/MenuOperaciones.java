@@ -2,7 +2,7 @@ package ui;
 
 import servicios.BibliotecaService;
 import estructuras.Validaciones.validaciones;
-import servicios.OperacionService;
+
 
 public class MenuOperaciones {
     private final BibliotecaService bibliotecaService;
@@ -26,23 +26,13 @@ public class MenuOperaciones {
 
             switch (opcion) {
                 case 1 -> bibliotecaService.registrarPrestamo();
-                case 2 -> registrarDevolucion();
-                case 3 -> deshacerUltimaOperacion();
-                case 4 -> atenderUsuariosEnEspera();
+                // case 2 -> registrarDevolucion();
+                // case 3 -> deshacerUltimaOperacion();
+                // case 4 -> atenderUsuariosEnEspera();
                 default -> System.out.println("Opcion invalida");
             }
             validaciones.pause();
         } while (opcion != 0);
-    }
-
-    public static void registrarDevolucion() {
-        // Lógica para registrar una devolución
-    }
-    public static void deshacerUltimaOperacion() {
-        // Lógica para deshacer la última operación
-    }
-    public static void atenderUsuariosEnEspera() {
-        // Lógica para atender usuarios en espera
     }
 
 }
