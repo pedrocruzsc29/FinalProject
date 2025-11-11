@@ -17,7 +17,7 @@ public class OperacionService {
 
     // PRESTAMOS 
 
-    public static void prestarLibro(BinarySearchTree <Usuario> usuarios, BinarySearchTree <Libro> libros, Stack <Operaciones> acciones, Queue <String> pendientes){
+    public static void prestarLibro(BinarySearchTree <Usuario> usuarios, BinarySearchTree <Libro> libros, Stack <Operaciones> acciones, Queue <Usuario> pendientes){
         Scanner sc = new Scanner(System.in);
         String nombre = validaciones.validarTextoIngresado(sc, "Usuario a buscar: ");
         Usuario usuarioTemp = new Usuario(0," ",nombre, " ", " ");
@@ -34,7 +34,7 @@ public class OperacionService {
                     acciones.push(operacion);
                     System.out.println("*** Prestamo realizado exitosamente ***");
                 }else{
-                    pendientes.add(usuarioEcontrado.getNombre());
+                    pendientes.add(usuarioEcontrado);
                     System.out.println("Libro no disponible. Usuario agregado a PENDIENTES...");
                 }
             }else{
@@ -48,7 +48,7 @@ public class OperacionService {
 
     // DEVOLUCIONES 
 
-    public static void devolverLibro(BinarySearchTree <Usuario> usuarios, BinarySearchTree <Libro> libros, Stack <Operaciones> acciones, Queue <String> pendientes){
+    public static void devolverLibro(BinarySearchTree <Usuario> usuarios, BinarySearchTree <Libro> libros, Stack <Operaciones> acciones){
         Scanner sc = new Scanner(System.in);
         String nombre = validaciones.validarTextoIngresado(sc, "Usuario a buscar: ");
         Usuario usuarioTemp = new Usuario(0," ",nombre, " ", " ");
@@ -110,6 +110,17 @@ public class OperacionService {
             System.out.println("No hay operaciones para revertir...");
         }
         return libroSaliente;
+    }
+
+    // ATENCIÓN DE PENDIENTES 
+
+    public static Usuario atenderPendientes(Queue <Usuario> pendientes){
+        Usuario usuarioSaliente = null;
+        if (!pendientes.isEmpty()){
+            return pendientes.remove();
+        }
+        return usuarioSaliente;
+
     }
 
 
