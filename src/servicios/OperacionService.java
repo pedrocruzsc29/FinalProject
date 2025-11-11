@@ -80,13 +80,37 @@ public class OperacionService {
 
     // REVERSIÓN DE OPERACIONES 
     
-    public static void reversionOperaciones(BinarySearchTree <Usuario> usuarios, BinarySearchTree <Libro> libros, Stack <Operaciones> acciones, Queue <String> pendientes){
-        Operaciones operacionReciente = acciones.pop();
-        if (operacionReciente.getTipo().equals("Prestamo")){
-            operacionReciente.getLibro().setDisponible(false);
+    public static Libro reversionOperaciones(BinarySearchTree <Usuario> usuarios, BinarySearchTree <Libro> libros, Stack <Operaciones> acciones){
+        Libro libroSaliente = null;
+        if (!acciones.isEmpty()){
+            Operaciones operacionReciente = acciones.pop();
+            
+            Usuario usuario = operacionReciente.getUsuario();
+            Libro libro = operacionReciente.getLibro();
+            libroSaliente = libro;
+            if (operacionReciente.getTipo().equals("Prestamo")){
+                libroSaliente.setDisponible(true); // Se devuelve el libro
+                if (usuario.getLibrosPrestados() > 0){
+                    usuario.setLibrosPrestados(usuario.getLibrosPrestados() - 1);
+                    System.out.println("Prestamo revertido. El libro fue devuelto...");
 
+                }else{
+                    System.out.println("El usuario no posee libros...");
+                }
+                
+            }else{ // Tipo de operación -> Devolución
+                if (libro.isDisponible()){
+                    libro.setDisponible(false);
+                    usuario.setLibrosPrestados(usuario.getLibrosPrestados() + 1);
+                    System.out.println("Devolución revertida. El libro fue prestado nuevamente...");
+                }else{
+                    System.out.println("Libro prestado. No se pudo devolver...");
+                }
+            }
+        }else{
+            System.out.println("No hay operaciones para revertir...");
         }
-
+        return libroSaliente;
     }
 
 

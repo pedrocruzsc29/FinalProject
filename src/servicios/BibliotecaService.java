@@ -52,7 +52,7 @@ public class BibliotecaService {
         OperacionService.devolverLibro(this.usuarios, this.libros, this.acciones, this.pendientes);
     }
     public void deshacerUltimaOperacion() {
-        OperacionService.reversionOperaciones(this.usuarios, this.libros, this.acciones, this.pendientes);
+        OperacionService.reversionOperaciones(this.usuarios, this.libros, this.acciones);
     }
 
 
