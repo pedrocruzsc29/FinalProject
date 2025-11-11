@@ -185,6 +185,17 @@ public class SimpleLinkedList<ELEMENT> implements ILinkedList<ELEMENT> {
 
     }
 
+    public ELEMENT obtenerPosicion(int index) {
+        if (index < 0 || index >= this.count) {
+            throw new IndexOutOfBoundsException("Índice fuera de rango: " + index);
+        }
+        Node<ELEMENT> current = this.head;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        return current.item;
+    }
+
 
     //endregion
 
