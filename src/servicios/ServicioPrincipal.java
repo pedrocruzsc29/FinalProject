@@ -81,6 +81,10 @@ public class ServicioPrincipal {
         return resultados;
         
     }
+    public double totalPrestados(){
+        double total = LibroService.calcularMontoTotalPrestados(this.arreglolLibro);
+        return total;
+    }
 
 
 }

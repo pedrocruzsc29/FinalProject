@@ -87,6 +87,17 @@ public class LibroService {
         return resultados;
     }
 
+
+    public static double calcularMontoTotalPrestados(Libro[] arregloLibro) {
+        double total = 0.0;
+        for (Libro libro : arregloLibro) {
+            if (libro != null && libro.isDisponible() == false) {
+                total += libro.getPrecio();
+            }
+        }
+        return total;
+    }
+
      
     
     

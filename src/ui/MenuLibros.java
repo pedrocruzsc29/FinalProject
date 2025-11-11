@@ -57,8 +57,10 @@ public class MenuLibros {
             System.out.println("No se encontraron libros de este autor");
         }
     }
-    public static void calcularMontoTotalPrestados() {
-        // double total = bibliotecaService.totalPrestados();
+    private void calcularMontoTotalPrestados() {
+        double total = bibliotecaService.totalPrestados();
+        System.out.println("\n=== MONTO TOTAL DE LIBROS PRESTADOS ===");
+        System.out.printf("El monto total de los libros prestados es: $%.2f%n", total);
         
     }
 }
