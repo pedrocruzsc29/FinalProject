@@ -1,14 +1,14 @@
 package ui;
 
-import servicios.BibliotecaService;
+import servicios.ServicioPrincipal;
 import estructuras.Validaciones.validaciones;
 
 public class MenuPrincipal {
     
-    private final BibliotecaService bibliotecaService;
+    private final ServicioPrincipal bibliotecaService;
 
     // constructos 
-    public MenuPrincipal(BibliotecaService bibliotecaService) {
+    public MenuPrincipal(ServicioPrincipal bibliotecaService) {
         this.bibliotecaService = bibliotecaService;
     }
 
