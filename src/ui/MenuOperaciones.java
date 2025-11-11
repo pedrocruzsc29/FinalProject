@@ -29,7 +29,7 @@ public class MenuOperaciones {
                 case 2 -> bibliotecaService.registrarDevolucion();
                 case 3 -> bibliotecaService.deshacerUltimaOperacion();
                 case 4 -> bibliotecaService.atenderPendientes();
-                case 0 -> System.out.println("Volviendo al menú principal...");
+                case 0 -> System.out.println("Volviendo al menu principal...");
                 default -> System.out.println("Opcion invalida");
             }
             validaciones.pause();

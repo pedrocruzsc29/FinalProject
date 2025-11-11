@@ -25,8 +25,8 @@ public class LibroService {
         }
         if(encontrado == null && contador < librosArreglo.length ){
             String titulo = validaciones.validarTextoIngresado(input, "ingrese el titulo del libro: ");
-            String autor = validaciones.validarTextoIngresado(input, "ingrese el nombre del autor de " + titulo);
-            double precio = validaciones.readDouble("ingrese el precio de libro " + titulo);
+            String autor = validaciones.validarTextoIngresado(input, "ingrese el nombre del autor de " +  titulo);
+            double precio = validaciones.readDouble("ingrese el precio de libro " +  titulo);
             boolean disponible = true;
             Libro libro = new Libro(codigo, titulo,autor,precio,disponible);
             librosArbol.add(libro);
@@ -46,6 +46,7 @@ public class LibroService {
         Libro encontrado = librosArbol.buscar1(auxiliar);
         if(encontrado == null){
             System.out.println("no se encontro el libro que se estaba bucando");
+            return;
         }
         System.out.println("El libro fue encontardo con exito");
         System.out.println(encontrado);
