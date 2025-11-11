@@ -92,17 +92,6 @@ Sistema integral de gestión bibliotecaria desarrollado en **Java** que implemen
 ✅ realizarDevolucion()          // Devolución con actualización de estado
 ✅ deshacerUltimaOperacion()     // Reversión usando pila de acciones
 ✅ atenderPendiente()            // Procesar usuario de cola de espera
-```
-
-### 📊 Consultas y Reportes
-
-```java
-// Análisis del sistema
-✅ mostrarCatalogo()             // Vista detallada de todos los libros
-✅ mostrarUsuarios()             // Vista detallada de todos los usuarios
-✅ generarReportePrestamos()     // Estadísticas de préstamos activos
-✅ consultarColaPendientes()     // Estado de la cola de espera
-```
 
 ---
 
