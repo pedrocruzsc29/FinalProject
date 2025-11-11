@@ -84,7 +84,6 @@ public class OperacionService {
         Libro libroSaliente = null;
         if (!acciones.isEmpty()){
             Operaciones operacionReciente = acciones.pop();
-            
             Usuario usuario = operacionReciente.getUsuario();
             Libro libro = operacionReciente.getLibro();
             libroSaliente = libro;
@@ -118,15 +117,9 @@ public class OperacionService {
     public static Usuario atenderPendientes(Queue <Usuario> pendientes){
         Usuario usuarioSaliente = null;
         if (!pendientes.isEmpty()){
-            return pendientes.remove();
+            usuarioSaliente = pendientes.remove();
         }
         return usuarioSaliente;
 
     }
-
-
-        
-
-
-    
 }
