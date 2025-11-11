@@ -48,6 +48,12 @@ public class BibliotecaService {
     public void registrarPrestamo() {
         OperacionService.prestarLibro(this.usuarios, this.libros, this.acciones, this.pendientes);
     }
+    public void registrarDevolucion() {
+        OperacionService.devolverLibro(this.usuarios, this.libros, this.acciones, this.pendientes);
+    }
+    public void deshacerUltimaOperacion() {
+        OperacionService.reversionOperaciones(this.usuarios, this.libros, this.acciones, this.pendientes);
+    }
 
 
 }

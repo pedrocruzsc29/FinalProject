@@ -26,8 +26,8 @@ public class MenuOperaciones {
 
             switch (opcion) {
                 case 1 -> bibliotecaService.registrarPrestamo();
-                // case 2 -> registrarDevolucion();
-                // case 3 -> deshacerUltimaOperacion();
+                case 2 -> bibliotecaService.registrarDevolucion();
+                case 3 -> bibliotecaService.deshacerUltimaOperacion();
                 // case 4 -> atenderUsuariosEnEspera();
                 default -> System.out.println("Opcion invalida");
             }
