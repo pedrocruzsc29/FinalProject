@@ -4,7 +4,6 @@ import Modelo.Libro;
 import estructuras.Validaciones.validaciones;
 import estructuras.arboles.BinarySearchTree;
 import estructuras.listaEnlazadas.SimpleLinkedList;
-
 import java.util.Scanner;
 
 
