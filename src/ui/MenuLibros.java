@@ -30,6 +30,7 @@ public class MenuLibros {
 
                 case 0 -> {
                 }
+                
                 default -> System.out.println("Opcion invalida");
             }
             validaciones.pause();

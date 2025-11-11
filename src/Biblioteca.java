@@ -60,10 +60,7 @@ public class Biblioteca {
         System.out.println("\n\033[1;32m");
         System.out.println("  ╔══════════════════════════════════════════════════════╗");
         System.out.println("  ║                                                      ║");
-        System.out.println("  ║              \033[1;97m¡HASTA PRONTO!\033[1;32m                      ║");
-        System.out.println("  ║    \033[0;90m\"El conocimiento es la única riqueza\"\033[1;32m      ║");
-        System.out.println("  ║                                                      ║");
-        System.out.println("  ║           \033[5m>>> SESIÓN CERRADA <<<\033[0m\033[1;32m               ║");
+        System.out.println("  ║           \033[5m>>> SESIÓN CERRADA <<<\033[0m\033[1;32m                     ║");
         System.out.println("  ║                                                      ║");
         System.out.println("  ╚══════════════════════════════════════════════════════╝");
         System.out.println("\033[0m\n");
