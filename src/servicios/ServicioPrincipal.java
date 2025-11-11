@@ -6,7 +6,7 @@ import estructuras.colas.Queue;
 import Modelo.Libro;
 import Modelo.Usuario;
 import Modelo.Operaciones;
-public class BibliotecaService {
+public class ServicioPrincipal {
     // private LibroService libroService;
     // private UsuarioService usuarioService;
     // almacenes centrales
@@ -17,7 +17,7 @@ public class BibliotecaService {
 
     private final UsuarioService usuarioService; // reutilizar instancia
 
-    public BibliotecaService() {
+    public ServicioPrincipal() {
         this.usuarios = new BinarySearchTree<>();
         this.libros = new BinarySearchTree<>();
         this.acciones = new Stack<>();
@@ -47,6 +47,12 @@ public class BibliotecaService {
     // LOGICA DE OPERACIONES
     public void registrarPrestamo() {
         OperacionService.prestarLibro(this.usuarios, this.libros, this.acciones, this.pendientes);
+    }
+    public void registrarDevolucion() {
+        OperacionService.devolverLibro(this.usuarios, this.libros, this.acciones, this.pendientes);
+    }
+    public void deshacerUltimaOperacion() {
+        OperacionService.reversionOperaciones(this.usuarios, this.libros, this.acciones);
     }
 
 

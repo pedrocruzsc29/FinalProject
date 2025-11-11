@@ -19,8 +19,8 @@ public class MenuUsuarios {
     public void mostrar() {
         int opcion;
         do {
-            validaciones.clearScreen();
-            System.out.println("\n\033[0;32m=== GESTION DE USUARIOS ===");
+            validaciones.limpiarPantalla(); 
+            System.out.println("=== GESTION DE USUARIOS ===");
             System.out.println("1. Registrar nuevo usuario");
             System.out.println("2. Buscar usuario");
             System.out.println("3. Listar usuarios con mas X libros");
@@ -33,7 +33,7 @@ public class MenuUsuarios {
                 case 2 -> bibliotecaService.buscarUsuario();
                 case 3 -> bibliotecaService.listarUsuariosConMasLibros();
                 case 4 -> bibliotecaService.mostrarUsuariosRegistrados();
-
+                case 0 -> System.out.println("Volviendo al menu principal...");
                 default -> System.out.println("Opcion invalida");
             }
             validaciones.pause();

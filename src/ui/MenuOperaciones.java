@@ -15,20 +15,19 @@ public class MenuOperaciones {
         int opcion;
         do {
 
-            validaciones.clearScreen();
+            validaciones.limpiarPantalla();
             System.out.println("=== OPERACIONES ===");
             System.out.println("1. Registrar préstamo");
             System.out.println("2. Registrar devolución");
             System.out.println("3. Deshacer última operación");
-            System.out.println("4. Atender usuarios en espera");
             System.out.println("0. Volver");
             opcion = validaciones.readInt("Seleccione una opción: ");
 
             switch (opcion) {
                 case 1 -> bibliotecaService.registrarPrestamo();
-                // case 2 -> registrarDevolucion();
-                // case 3 -> deshacerUltimaOperacion();
-                // case 4 -> atenderUsuariosEnEspera();
+                case 2 -> bibliotecaService.registrarDevolucion();
+                case 3 -> bibliotecaService.deshacerUltimaOperacion();
+                case 0 -> System.out.println("Volviendo al menú principal...");
                 default -> System.out.println("Opcion invalida");
             }
             validaciones.pause();

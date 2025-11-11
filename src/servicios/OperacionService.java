@@ -84,6 +84,7 @@ public class OperacionService {
         Libro libroSaliente = null;
         if (!acciones.isEmpty()){
             Operaciones operacionReciente = acciones.pop();
+            
             Usuario usuario = operacionReciente.getUsuario();
             Libro libro = operacionReciente.getLibro();
             libroSaliente = libro;
