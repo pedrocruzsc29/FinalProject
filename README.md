@@ -132,14 +132,19 @@ biblioteca-sistema/
 │   │   ├── Pila.java
 │   │   ├── Cola.java
 │   │   └── ListaEnlazada.java
+|   |   └── Validaciones.java
 │   │
 │   ├── servicio/
-│   │   ├── GestionLibros.java
-│   │   ├── GestionUsuarios.java
-│   │   └── GestionOperaciones.java
-│   │
-│   ├── utilidad/
-│   │   └── Validaciones.java
+|   |   ├── BibliotecaService.java
+│   │   ├── LibroService.java
+│   │   ├── UsuariosService.java
+│   │   └── OperacionesService.java
+│   ├── iu/
+|   |   ├── LibroMenu.java
+│   │   ├── UsuarioMenu.java
+│   │   ├── MenuPrincipal.java
+│   │   └── OperacionesMenu.java
+│   │   
 │   │
 │   └── Main.java
 │
@@ -171,7 +176,6 @@ java Main
 - **Integrante 1** - [GitHub](https://github.com/usuario1)
 - **Integrante 2** - [GitHub](https://github.com/usuario2)
 - **Integrante 3** - [GitHub](https://github.com/usuario3)
-- **Integrante 4** - [GitHub](https://github.com/usuario4)
 
 ---
 
@@ -202,44 +206,7 @@ Este proyecto fue desarrollado como parte del **Proyecto Integrador** de la mate
 1. 📚 Gestión de Libros
 2. 👥 Gestión de Usuarios
 3. 🔄 Operaciones de Préstamo
-4. 📊 Consultas y Reportes
 5. ❌ Salir
-```
-
-### Ejemplo de Consulta
-```
-┌──────────────┬─────────────────────────┬──────────────┐
-│   Nº USUARIO │ NOMBRE                  │ LIBROS       │
-├──────────────┼─────────────────────────┼──────────────┤
-│ USR001       │ Juan Pérez              │ 5            │
-│ USR003       │ María González          │ 7            │
-└──────────────┴─────────────────────────┴──────────────┘
-
-✓ Total encontrado: 2 usuario(s)
-```
-
----
-
-## 🐛 Problemas Conocidos
-
-- [ ] Optimización de búsqueda en árboles desbalanceados
-- [ ] Implementar persistencia de datos
-
----
-
-## 🔮 Mejoras Futuras
-
-- [ ] Interfaz gráfica con JavaFX
-- [ ] Base de datos SQL para persistencia
-- [ ] Sistema de multas por retraso
-- [ ] Exportación de reportes a PDF
-- [ ] API REST para integración web
-
----
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
 
 ---
 
