@@ -1,7 +1,10 @@
 package ui;
 
 import servicios.ServicioPrincipal;
+import Modelo.Libro;
 import estructuras.Validaciones.validaciones;
+import estructuras.listaEnlazadas.SimpleLinkedList;
+
 
 
 
@@ -30,7 +33,7 @@ public class MenuLibros {
                 case 1 -> bibliotecaService.registrarLibro();
                 case 2 -> bibliotecaService.buscarLibro();
                 case 3 -> bibliotecaService.mostrarCatalogo();
-                // case 4 -> bibliotecaService.buscarLibrosPorAutor();
+                case 4 -> buscarPorAutor();
                 // case 5 -> bibliotecaService.calcularMontoTotalPrestados();
                 case 0 -> System.out.println("Volviendo al menu principal...");
 
@@ -39,5 +42,19 @@ public class MenuLibros {
             validaciones.pause();
         } while (opcion != 0);
     }
-  
+    private void buscarPorAutor() {
+        System.out.println("\n=== BUSCAR LIBROS POR AUTOR ===");
+        String autor = validaciones.readString("Ingrese nombre del autor: ");
+        SimpleLinkedList<Libro> resultados = bibliotecaService.buscarLibrosPorAutor(autor);
+
+        if (resultados.size() > 0) {
+            System.out.println("\nLIBROS ENCONTRADOS:");
+            for (Libro libro : resultados) {
+                System.out.println(libro);
+            }
+            System.out.println("Total: " + resultados.size() + " libros");
+        } else {
+            System.out.println("No se encontraron libros de este autor");
+        }
+    }
 }
