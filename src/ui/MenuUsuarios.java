@@ -3,16 +3,16 @@ package ui;
 import estructuras.Validaciones.validaciones;
 import java.util.Scanner;
 
-import servicios.BibliotecaService;
+import servicios.ServicioPrincipal;
 
 public class MenuUsuarios {
 
-    private final BibliotecaService bibliotecaService;
+    private final ServicioPrincipal bibliotecaService;
 
     
     Scanner scanner= new Scanner(System.in);
 
-    public MenuUsuarios(BibliotecaService bibliotecaService) {
+    public MenuUsuarios(ServicioPrincipal bibliotecaService) {
         this.bibliotecaService = bibliotecaService;
     }
 

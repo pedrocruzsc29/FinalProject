@@ -1,13 +1,13 @@
 package ui;
 
-import servicios.BibliotecaService;
+import servicios.ServicioPrincipal;
 import estructuras.Validaciones.validaciones;
 
 
 public class MenuOperaciones {
-    private final BibliotecaService bibliotecaService;
+    private final ServicioPrincipal bibliotecaService;
 
-    public MenuOperaciones(BibliotecaService bibliotecaService) {
+    public MenuOperaciones(ServicioPrincipal bibliotecaService) {
         this.bibliotecaService = bibliotecaService;
     }
 
@@ -20,6 +20,7 @@ public class MenuOperaciones {
             System.out.println("1. Registrar préstamo");
             System.out.println("2. Registrar devolución");
             System.out.println("3. Deshacer última operación");
+            System.out.println("4. Atender pendientes");
             System.out.println("0. Volver");
             opcion = validaciones.readInt("Seleccione una opción: ");
 
@@ -27,6 +28,7 @@ public class MenuOperaciones {
                 case 1 -> bibliotecaService.registrarPrestamo();
                 case 2 -> bibliotecaService.registrarDevolucion();
                 case 3 -> bibliotecaService.deshacerUltimaOperacion();
+                case 4 -> bibliotecaService.atenderPendientes();
                 case 0 -> System.out.println("Volviendo al menú principal...");
                 default -> System.out.println("Opcion invalida");
             }

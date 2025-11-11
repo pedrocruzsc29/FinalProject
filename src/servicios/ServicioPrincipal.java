@@ -3,17 +3,17 @@ package servicios;
 import estructuras.arboles.BinarySearchTree;
 import estructuras.pilas.Stack;
 import estructuras.colas.Queue;
+// Modelos
 import Modelo.Libro;
 import Modelo.Usuario;
 import Modelo.Operaciones;
 public class ServicioPrincipal {
-    // private LibroService libroService;
-    // private UsuarioService usuarioService;
-    // almacenes centrales
     public final BinarySearchTree<Usuario> usuarios;
     public final BinarySearchTree<Libro> libros;
     public final Stack<Operaciones> acciones;
-    public final Queue<String> pendientes;
+    public final Queue<String> colaPendientes;
+    public final Queue<Usuario> pendientes;
+    private Libro[] arbolLibro;
 
     private final UsuarioService usuarioService; // reutilizar instancia
 
@@ -22,7 +22,9 @@ public class ServicioPrincipal {
         this.libros = new BinarySearchTree<>();
         this.acciones = new Stack<>();
         this.pendientes = new Queue<>();
-        this.usuarioService = new UsuarioService(100, this.usuarios, this.pendientes, this.libros); // inicializar con referencias centrales
+        this.colaPendientes = new Queue<>();
+        this.arbolLibro = new Libro[100];
+        this.usuarioService = new UsuarioService(100, this.usuarios,  this.libros);
 
     }
 
@@ -49,10 +51,24 @@ public class ServicioPrincipal {
         OperacionService.prestarLibro(this.usuarios, this.libros, this.acciones, this.pendientes);
     }
     public void registrarDevolucion() {
-        OperacionService.devolverLibro(this.usuarios, this.libros, this.acciones, this.pendientes);
+        OperacionService.devolverLibro(this.usuarios, this.libros, this.acciones);
     }
     public void deshacerUltimaOperacion() {
         OperacionService.reversionOperaciones(this.usuarios, this.libros, this.acciones);
+    }
+    public void atenderPendientes() {
+        OperacionService.atenderPendientes(this.pendientes);
+    }
+    // ----------------------------------------------------------------------------------------------------------
+    // LOGICA DE LIBROS
+    public void registrarLibro(){
+        LibroService.insertarLibro(this.libros, this.arbolLibro);
+    }
+    public void buscarLibro(){
+        LibroService.buscaLibro(this.libros);
+    }
+    public void mostrarCatalogo(){
+        LibroService.mostrarInOrder(this.libros);
     }
 
 

@@ -1,12 +1,12 @@
 
-import servicios.BibliotecaService;
+import servicios.ServicioPrincipal;
 import ui.MenuPrincipal;
 import estructuras.Validaciones.validaciones;
 
 public class Biblioteca {
     public static void main(String[] args) {
 
-        BibliotecaService bibliotecaService = new BibliotecaService();
+        ServicioPrincipal bibliotecaService = new ServicioPrincipal();
         
         mostrarBienvenida();
         // Esperar a que el usuario presione Enter
