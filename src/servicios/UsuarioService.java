@@ -3,6 +3,7 @@ import estructuras.arboles.*;
 import Modelo.Libro;
 import Modelo.Usuario;
 import estructuras.Validaciones.validaciones;
+import estructuras.listaEnlazadas.SimpleLinkedList;
 
 public class UsuarioService {  
     private Usuario[] arregloUsuarios;
@@ -102,29 +103,19 @@ public class UsuarioService {
     } 
     // ----------------------------------------------------------------------------------------------------------
 
-        // Lista usuarios con más de X libros prestados
-    public void listarUsuariosConMasLibros() {
-        System.out.println("\n" + "=".repeat(55));
-        System.out.println("  USUARIOS CON MAS DE X LIBROS PRESTADOS");
-        System.out.println("=".repeat(55) + "\n");
+    // Lista usuarios con más de X libros prestados
+    public SimpleLinkedList<Usuario> listarUsuariosConMasDeXLibrosEnLista(int cantidadMinima) {
+        SimpleLinkedList<Usuario> resultado = new SimpleLinkedList<>();
         
-        int cantidadMinima = validaciones.readInt("Cantidad mínima de libros: ");
-        Usuario[] usuarios = listarUsuariosConMasDeXLibros(cantidadMinima);
-
-        if (usuarios.length > 0) {
-            System.out.println("\nRESULTADOS:");
-            System.out.println("-".repeat(55));//
-            
-            for (int i = 0; i < usuarios.length; i++) {
-                Usuario usuario = usuarios[i];
-                System.out.printf("%n[%d] %s%n", (i + 1), usuario.getNombre());
-                System.out.printf("    Usuario: %-15d | Libros prestados: %d%n", usuario.getNumeroUsuario(), usuario.getLibrosPrestados());
+        // Recorrer el arreglo de usuarios
+        for (int i = 0; i < this.cantidadUsuarios; i++) {
+            Usuario u = this.arregloUsuarios[i];
+            if (u != null && u.getLibrosPrestados() >= cantidadMinima) {
+                resultado.addLast(u);
             }
-            System.out.println("\n" + "-".repeat(55));
-            System.out.printf("Total: %d usuario(s) | Criterio: ≥%d libros%n", usuarios.length, cantidadMinima);
-        } else {
-            System.out.println("\nNo hay usuarios con " + cantidadMinima + " o mas libros prestados...");
         }
+        
+        return resultado;
     }
 
     // Lista usuarios con X o más libros prestados

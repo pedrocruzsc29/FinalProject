@@ -40,8 +40,9 @@ public class ServicioPrincipal {
         usuarioService.buscarUsuario();
     }
     
-    public void listarUsuariosConMasLibros(){
-        usuarioService.listarUsuariosConMasLibros();
+    public SimpleLinkedList<Usuario> listarUsuariosConMasDeXLibros(int cantidadMinima) {
+        SimpleLinkedList<Usuario> usuariosConMasLibros = usuarioService.listarUsuariosConMasDeXLibrosEnLista(cantidadMinima);
+        return usuariosConMasLibros;
     }
 
     public void mostrarUsuariosRegistrados(){

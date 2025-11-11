@@ -34,7 +34,7 @@ public class MenuLibros {
                 case 2 -> bibliotecaService.buscarLibro();
                 case 3 -> bibliotecaService.mostrarCatalogo();
                 case 4 -> buscarPorAutor();
-                // case 5 -> bibliotecaService.calcularMontoTotalPrestados();
+                case 5 -> calcularMontoTotalPrestados();
                 case 0 -> System.out.println("Volviendo al menu principal...");
 
                 default -> System.out.println("Opcion invalida");
@@ -56,5 +56,9 @@ public class MenuLibros {
         } else {
             System.out.println("No se encontraron libros de este autor");
         }
+    }
+    public static void calcularMontoTotalPrestados() {
+        // double total = bibliotecaService.totalPrestados();
+        
     }
 }
