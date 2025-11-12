@@ -70,7 +70,7 @@ public class Libro implements Comparable<Libro> {
     }
     @Override
     public String toString() {
-        return String.format("[%s] %s - %s ($%.2f) %s", 
+        return String.format("[%s] %s - %s ($%.2f) - %s", 
             codigo, titulo, autor, precio, disponible ? "Disponible" : "Prestado");
     }
 

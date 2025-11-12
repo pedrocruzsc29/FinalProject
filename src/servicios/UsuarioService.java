@@ -1,5 +1,8 @@
 package servicios;
 import estructuras.arboles.*;
+
+import java.util.Scanner;
+
 import Modelo.Libro;
 import Modelo.Usuario;
 import estructuras.Validaciones.validaciones;
@@ -32,7 +35,8 @@ public class UsuarioService {
             return;
         }
         int numeroUsuario = generarCodigoUnico(); // Generar un codigo aleatorio (ahora solo si hay espacio)
-        String dni = validaciones.readString("DNI: ");
+        Scanner sc = new Scanner(System.in);
+        int dni = validaciones.validarNumero(sc, "DNI: ");
         String nombre = validaciones.readString("Nombre completo: ");
         String direccion = validaciones.readString("Dirección: ");
         String telefono = validaciones.readString("Teléfono: ");
@@ -45,7 +49,7 @@ public class UsuarioService {
         }
     }
 
-    public boolean registrarUsuario(int numeroUsuario, String dni, String nombre, String direccion, String telefono) {
+    public boolean registrarUsuario(int numeroUsuario, int dni, String nombre, String direccion, String telefono) {
         if (cantidadUsuarios >= arregloUsuarios.length) {
             return false; // Arreglo lleno
         }

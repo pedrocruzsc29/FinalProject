@@ -23,18 +23,18 @@ public class LibroService {
             }
         }
         if(encontrado == null && contador < librosArreglo.length ){
-            String titulo = validaciones.validarTextoIngresado(input, "ingrese el titulo del libro: ");
-            String autor = validaciones.validarTextoIngresado(input, "ingrese el nombre del autor de " +  titulo);
-            double precio = validaciones.readDouble("ingrese el precio de libro " +  titulo);
+            String titulo = validaciones.validarTextoIngresado(input, "Ingrese el titulo del libro: ");
+            String autor = validaciones.validarTextoIngresado(input, "Ingrese el nombre del autor de " +  titulo + ": ");
+            double precio = validaciones.readDouble("Ingrese el precio de libro " +  titulo + ": ");
             boolean disponible = true;
             Libro libro = new Libro(codigo, titulo,autor,precio,disponible);
             librosArbol.add(libro);
             librosArreglo[contador] = libro;
-            System.out.println("se agrego el libro a la biblioteca.");
+            System.out.println("Se agrego el libro a la biblioteca.");
         }
         else{
             System.out.println("ERROR!!!!!!!");
-            System.out.println("el libros ya esta registrado en la biblioteca.");
+            System.out.println("El libro ya esta registrado en la biblioteca.");
         }
     }
     // Busca un libro por código e imprime su información
@@ -44,7 +44,7 @@ public class LibroService {
         Libro auxiliar = new Libro(codigo, "","",00,false);
         Libro encontrado = librosArbol.buscar1(auxiliar);
         if(encontrado == null){
-            System.out.println("no se encontro el libro que se estaba bucando");
+            System.out.println("No se encontro el libro que se estaba buscando...");
             return;
         }
         System.out.println("El libro fue encontardo con exito");
@@ -55,7 +55,7 @@ public class LibroService {
     // Muestra el catálogo completo de libros (inOrder)
     public static void mostrarInOrder(BinarySearchTree<Libro> libros){
         System.out.println("\n=== CATÁLOGO COMPLETO ===");
-        System.out.println("estos son los libros mostrados en orden ");
+        System.out.println("Estos son los libros mostrados en orden... ");
         libros.inOrder();
     }
     // ----------------------------------------------------------------------------------------------------------
@@ -75,18 +75,23 @@ public class LibroService {
     }
     // ----------------------------------------------------------------------------------------------------------
 
+    // BUSCAR LIBROS POR AUTOR -> CONTAINS 
 
-     public static SimpleLinkedList<Libro> buscarLibrosPorAutor(String autor, Libro[] arrgloLibro) {
-        SimpleLinkedList<Libro> resultados = new SimpleLinkedList<>();
-        if (autor == null || autor.trim().isEmpty()) return resultados;
-        for (Libro libro : arrgloLibro) {
-            if (libro != null && autor.equalsIgnoreCase(libro.getAutor())) {
-                resultados.addFirst(libro);
-            }
+    public static SimpleLinkedList<Libro> buscarLibrosPorAutor(String autor, Libro[] arregloLibro) {
+    SimpleLinkedList<Libro> resultados = new SimpleLinkedList<>();
+
+    if (autor == null || autor.trim().isEmpty()) return resultados;
+
+    for (Libro libro : arregloLibro) {
+        if (libro != null && libro.getAutor() != null &&
+            libro.getAutor().toLowerCase().contains(autor.toLowerCase())) {
+            resultados.addFirst(libro);
         }
-        return resultados;
     }
-
+    return resultados;
+}
+    
+    // MONTO CALCULADO 
 
     public static double calcularMontoTotalPrestados(Libro[] arregloLibro) {
         double total = 0.0;
@@ -97,8 +102,5 @@ public class LibroService {
         }
         return total;
     }
-
-     
-    
     
 }

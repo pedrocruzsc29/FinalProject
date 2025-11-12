@@ -1,6 +1,5 @@
 package servicios;
 
-import estructuras.Validaciones.validaciones;
 import estructuras.arboles.BinarySearchTree;
 import estructuras.pilas.Stack;
 import estructuras.colas.Queue;
@@ -16,7 +15,7 @@ public class ServicioPrincipal {
     public final Queue<String> colaPendientes;
     public final Queue<Usuario> pendientes;
     private Libro[] arreglolLibro;
-    private final SimpleLinkedList<Libro> listaLibros = new SimpleLinkedList<>();
+    
 
     private final UsuarioService usuarioService; // reutilizar instancia
 
@@ -60,6 +59,11 @@ public class ServicioPrincipal {
     public void deshacerUltimaOperacion() {
         OperacionService.reversionOperaciones(this.usuarios, this.libros, this.acciones);
     }
+
+    public void mostrarAcciones(){
+        OperacionService.mostrarAccionesRealizadas(this.acciones);
+    }
+
     public void atenderPendientes() {
         OperacionService.atenderPendientes(this.pendientes);
     }

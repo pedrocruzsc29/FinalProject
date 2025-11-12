@@ -2,13 +2,13 @@ package Modelo;
 
 public class Usuario implements Comparable<Usuario> {
     private int numeroUsuario;  // Único
-    private String dni;
+    private int dni;
     private String nombre;
     private String direccion;
     private String telefono;
     private int librosPrestados; // Inicia en 0
 
-    public Usuario(int numeroUsuario, String dni, String nombre, String direccion, String telefono  ) {
+    public Usuario(int numeroUsuario, int dni, String nombre, String direccion, String telefono  ) {
         this.numeroUsuario = numeroUsuario;
         this.dni = dni;
         this.nombre = nombre;
@@ -25,11 +25,11 @@ public class Usuario implements Comparable<Usuario> {
         this.numeroUsuario = numeroUsuario;
     }
 
-    public String getDni() {
+    public int getDni() {
         return dni;
     }
 
-    public void setDni(String dni) {
+    public void setDni(int dni) {
         this.dni = dni;
     }
 
@@ -67,13 +67,13 @@ public class Usuario implements Comparable<Usuario> {
 
     @Override
     public String toString() {
-        return "Operacion [numeroUsuario=" + numeroUsuario + ", dni=" + dni + ", nombre=" + nombre + ", direccion="
-                + direccion + ", telefono=" + telefono + ", librosPrestados=" + librosPrestados + "]";
+        return "Número de Usuario: " + numeroUsuario + " - DNI: " + dni + " - Nombre: " + nombre + " - Direccion: "
+                + direccion + " - Teléfono: " + telefono + " - Libros Prestados: " + librosPrestados;
     }
 
     @Override
     public int compareTo(Usuario o) {
-        return this.nombre.compareToIgnoreCase(o.nombre);
+        return Integer.compare(this.numeroUsuario, o.numeroUsuario);
     }
     
 }

@@ -60,7 +60,13 @@ public class MenuLibros {
     private void calcularMontoTotalPrestados() {
         double total = bibliotecaService.totalPrestados();
         System.out.println("\n=== MONTO TOTAL DE LIBROS PRESTADOS ===");
-        System.out.printf("El monto total de los libros prestados es: $%.2f%n", total);
+        if (total == 0.0){
+            System.out.println("No se prestaron libros aún...");
+        }else{
+            System.out.printf("El monto total de los libros prestados es: $%.2f%n", total);
+
+        }
+        
         
     }
 }

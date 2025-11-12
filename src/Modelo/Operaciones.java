@@ -3,22 +3,23 @@ package Modelo;
 import java.time.LocalDate;
 
 public class Operaciones {
-    private String idOperacion;
+    private static int contador = 1;
+    private int idOperacion;
     private String tipo;        // "PRÉSTAMO" o "DEVOLUCIÓN"
     private Libro libro;
     private Usuario usuario;
     private LocalDate fecha;
-    public Operaciones(String idOperacion, String tipo, Libro libro, Usuario usuario, LocalDate fecha) {
-        this.idOperacion = idOperacion;
+    public Operaciones(String tipo, Libro libro, Usuario usuario, LocalDate fecha) {
+        this.idOperacion = contador++;
         this.tipo = tipo;
         this.libro = libro;
         this.usuario = usuario;
         this.fecha = fecha;
     }
-    public String getIdOperacion() {
+    public int getIdOperacion() {
         return idOperacion;
     }
-    public void setIdOperacion(String idOperacion) {
+    public void setIdOperacion(int idOperacion) {
         this.idOperacion = idOperacion;
     }
     public String getTipo() {
@@ -47,8 +48,8 @@ public class Operaciones {
     }
     @Override
     public String toString() {
-        return "Operacion [idOperacion=" + idOperacion + ", tipo=" + tipo + ", libro=" + libro + ", usuario=" + usuario
-                + ", fecha=" + fecha + "]";
+        return "Acción -> [ID]: " + idOperacion + " - Tipo: " + tipo + " - Libro: " + libro + " - Usuario: " + usuario
+                + " -Fecha:" + fecha;
     }
 
     
