@@ -34,8 +34,8 @@ public class ServicioPrincipal {
     }
     private void precargarDatos() {
 
-        // USUARIOS -> ÁRBOL BINARIO DE BÚSQUEDA 
-        
+        // USUARIOS -> ARREGLO USUARIOS -> ÁRBOL BINARIO DE BÚSQUEDA 
+                
         usuarioService.registrarUsuario(1, 30123456, "Ana López", "Av. Mitre 123", "1134567890");
         usuarioService.registrarUsuario(2, 28456789, "Carlos Pérez", "Calle Belgrano 456", "1145678901");
         usuarioService.registrarUsuario(3, 31234567, "Lucía Fernández", "Av. Rivadavia 789", "1156789012");
