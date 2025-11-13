@@ -47,7 +47,7 @@ public class LibroService {
             System.out.println("No se encontro el libro que se estaba buscando...");
             return;
         }
-        System.out.println("El libro fue encontardo con exito");
+        System.out.println("El libro fue encontrado con exito");
         System.out.println(encontrado);
     }
     // ----------------------------------------------------------------------------------------------------------

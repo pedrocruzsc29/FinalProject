@@ -18,7 +18,6 @@ public class MenuLibros {
     public void mostrar() {
         int opcion;
         do {
-            System.out.println("pepe");
             validaciones.limpiarPantalla();
             System.out.println("=== GESTION DE LIBROS ===");
             System.out.println("1. Registrar nuevo libro");
@@ -66,7 +65,5 @@ public class MenuLibros {
             System.out.printf("El monto total de los libros prestados es: $%.2f%n", total);
 
         }
-        
-        
     }
 }

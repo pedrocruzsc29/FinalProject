@@ -49,7 +49,7 @@ public class Operaciones {
     @Override
     public String toString() {
         return "Acción -> [ID]: " + idOperacion + " - Tipo: " + tipo + " - Libro: " + libro + " - Usuario: " + usuario
-                + " -Fecha:" + fecha;
+                + " -Fecha: " + fecha;
     }
 
     
